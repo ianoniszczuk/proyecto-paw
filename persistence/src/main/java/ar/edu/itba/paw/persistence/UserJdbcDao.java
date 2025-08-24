@@ -1,8 +1,5 @@
 package ar.edu.itba.paw.persistence;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -31,12 +28,6 @@ public class UserJdbcDao implements UserDao {
 				.usingGeneratedKeyColumns("userid") 
 				.withTableName("users");
 		
-		jdbcTemplate.execute("""
-				CREATE TABLE IF NOT EXISTS users (
-					userid SERIAL PRIMARY KEY,
-					username VARCHAR(100) NOT NULL
-				)
-				""");
 	}
 
 	@Override  
